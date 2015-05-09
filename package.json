@@ -1,0 +1,26 @@
+{
+  "name": "node-avatar-generator",
+  "version": "1.0.0",
+  "description": "a random avatar generator base on node and node-imagemagick",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vinthony/node-avatar-generator.git"
+  },
+  "keywords": [
+    "avatar",
+    "image"
+  ],
+  "author": "vinthony",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vinthony/node-avatar-generator/issues"
+  },
+  "homepage": "https://github.com/vinthony/node-avatar-generator",
+  "devDependencies": {
+    "gm": "^1.17.0"
+  }
+}
