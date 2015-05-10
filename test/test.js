@@ -1,7 +1,7 @@
 var assert = require('assert')
-var picture = require('../picture')
-var colors = require('../color')
-var utils = require('../utils')
+var picture = require('../src/picture')
+var colors = require('../src/color')
+var utils = require('../src/utils')
 
 describe('Picture',function(){
 	describe('#ascii',function(){

@@ -1,3 +1,5 @@
+path = require('path')
+base = path.normalize(require('process').cwd()+path.sep+".."+path.sep+"font"+path.sep)
 
 var helvetica = function(page){
 		font_x = page * 0.60
@@ -7,7 +9,7 @@ var helvetica = function(page){
 			x : Number.parseInt(page/2-font_x/2),
 			y : Number.parseInt(page/2+font_y/2-page*0.14)
 		}
-		this.file = "Bariol_Light.otf"
+		this.file = base+"Bariol_Light.otf"
 	}
 
 var lihei = function(page){
@@ -18,7 +20,7 @@ var lihei = function(page){
 			x : Number.parseInt(page/2-font_x/2),
 			y : Number.parseInt(page/2+font_y/2-page*0.14)
 		}
-		this.file = "LiHei Pro.ttf"
+		this.file = base+"LiHei Pro.ttf"
 	}
 
 

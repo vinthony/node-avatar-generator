@@ -22,7 +22,7 @@ module.exports = function(cf){
 				.font(h.file)
 				.fontSize(width)
 				.drawText(h.offset.x,h.offset.y,words)
-				.write(path.normalize("./data/"+words+".png"),function(err){
+				.write(path.normalize("../data/"+words+".png"),function(err){
 					if(err) console.log(err)
 						console.log("a photo generator in :" + process.cwd()+"/data/"+words+".png");
 					cb()

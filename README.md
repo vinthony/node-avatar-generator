@@ -4,6 +4,9 @@ a random avatar generator base on node and gm
 ## server mode
 
 run a server of this tool
+```
+	[command] server
+```
 
 ```
 	http://node-avatar-generator.com/width/height/str/bgcolor
@@ -16,5 +19,19 @@ run a server of this tool
 ## cli node
 
 ```javascript
-	picture(config).one("name")
+	[command] one
+```
+
+
+## usage server mode
+
+```
+	npm install -g [command]
+	[command] server
+```
+
+## test
+
+```
+	mocha test
 ```
