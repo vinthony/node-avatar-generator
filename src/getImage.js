@@ -13,7 +13,8 @@ module.exports = function(path,cb){
 		/:width
 	*/
 	pic_config = {
-		width:configs[0]
+		width:configs[0],
+		mode:"server"
 	}
 	if(configs.length == 3){
 		pic_config.text = configs[1]
