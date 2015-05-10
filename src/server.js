@@ -7,7 +7,7 @@ http.createServer(function(req,res){
 	if(req.url == "/favicon.ico")
 		res.end()
 	else
-		getImage(req.url,function(bf){
+		getImage(decodeURIComponent(req.url),function(bf){
 			res.end(bf)
 		})
 }).listen(9527,'127.0.0.1');
