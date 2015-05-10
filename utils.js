@@ -11,3 +11,18 @@ exports.curry = function(func,arg){
 	}
 }
 
+//pickone
+
+exports.pickone = function(arr){
+	if(arr.length == 0)
+		return 0
+	if(arr.length == 1)
+		return arr[0]
+	len = arr.length
+	ran = Math.floor(Math.random()*len)
+	return arr[ran]
+}
+
+exports.foo = function(a,b){
+	return a+b
+}

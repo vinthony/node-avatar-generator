@@ -8,7 +8,7 @@ var path = require('path')
 module.exports = function(cf){
 	var width = cf.width
 	var color = cf.color
-	var one = function(text){
+	var one = function(text,cb){
 			//找到最小的正方形
 			if(text.charCodeAt(0)<128) // ascii
 			{	
@@ -25,6 +25,7 @@ module.exports = function(cf){
 				.write(path.normalize("./data/"+words+".png"),function(err){
 					if(err) console.log(err)
 						console.log("a photo generator in :" + process.cwd()+"/data/"+words+".png");
+					cb()
 				})
 		}
 

@@ -1,5 +1,5 @@
 # node-avatar-generator
-a random avatar generator base on node and node-imagemagick
+a random avatar generator base on node and gm
 
 ## server mode
 

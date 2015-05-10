@@ -1,5 +1,3 @@
-var fs = require('fs')
-var gm = require('gm').subClass({imageMagick:true})
 var colors = require('./color')
 var picture = require('./picture')
 var config = {
