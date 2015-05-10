@@ -1,5 +1,5 @@
 path = require('path')
-base = path.normalize(require('process').cwd()+path.sep+".."+path.sep+"font"+path.sep)
+base = path.normalize(require('process').cwd()+path.sep+".."+path.sep+"fonts"+path.sep)
 
 var helvetica = function(page){
 		font_x = page * 0.60

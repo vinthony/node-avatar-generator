@@ -11,7 +11,8 @@ describe('Picture',function(){
 					color:colors.RED
 				}
 			char_code = Math.floor(Math.random()*26+65)
-			picture(config).one(String.fromCharCode(char_code))
+			config.text = String.fromCharCode(char_code)
+			picture(config).one()
 			done()
 		})
 	})
@@ -22,7 +23,8 @@ describe('Picture',function(){
 					color:colors.RED
 				}
 			var items = "双马尾怎么绑才显得萌"	
-			picture(config).one(utils.pickone(items))
+			config.text = utils.pickone(items)
+			picture(config).one()
 			done()
 		})
 	})
@@ -36,6 +38,18 @@ describe('Utils',function(){
 		})
 		it('should doing curry process',function(){
 			assert.equal(utils.curry(utils.foo,10)(2),utils.foo(10,2))
+		})
+	})
+	describe('#double',function(){
+		it('should return double of the string',function(){
+			assert.equal(utils.double("123"),"112233");
+			assert.equal(utils.double("abc"),"aabbcc");
+		})
+	})
+	describe('#randomHex',function(){
+		it('should return a random of the string',function(){
+			assert.equal(parseInt(utils.randomHex(),16)<=256,true)
+			assert.equal(parseInt(utils.randomHex(),16)>=0,true)
 		})
 	})
 })

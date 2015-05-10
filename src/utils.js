@@ -26,3 +26,17 @@ exports.pickone = function(arr){
 exports.foo = function(a,b){
 	return a+b
 }
+exports.double = function(str){
+	re = ""
+	for (var i = 0;i <str.length;i++) {
+		re += str[i]+str[i]
+	};
+	return re
+}
+exports.randomHex = function(){
+	m = String(Math.floor(Math.random()*256).toString(16))
+	if(m.length == 1)
+		return "0"+m
+	else
+		return m
+}

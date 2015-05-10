@@ -9,14 +9,14 @@ run a server of this tool
 ```
 
 ```
-	http://node-avatar-generator.com/width/height/str/bgcolor
+	http://node-avatar-generator.com/width/str/bgcolor
 ```
 
 ```
  	http://node-avatar.generator.com/avatar/100/100/name
 ```
 
-## cli node
+## cli mode
 
 ```javascript
 	[command] one
