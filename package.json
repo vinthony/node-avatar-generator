@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/vinthony/node-avatar-generator",
   "devDependencies": {
-    "gm": "^1.17.0"
+    "bufferhelper": "^0.2.0",
+    "cheerio": "^0.17.0",
+    "encoding": "^0.1.11",
+    "gm": "^1.17.0",
+    "iconv-lite": "^0.4.8",
+    "request": "^2.42.0"
   }
 }

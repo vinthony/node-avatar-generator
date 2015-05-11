@@ -13,7 +13,7 @@ exports.curry = function(func,arg){
 
 //pickone
 
-exports.pickone = function(arr){
+var pickone = function(arr){
 	if(arr.length == 0)
 		return 0
 	if(arr.length == 1)
@@ -40,3 +40,15 @@ exports.randomHex = function(){
 	else
 		return m
 }
+var arandom = function(a,b){
+	return Math.floor(Math.random()*(b-a)+a)
+}
+
+exports.comicUrl = function(){
+	year  = arandom(2000,2015)
+	month = pickone([1,4,7,10])
+	baseUrl = "http://www.bilibili.com/index/bangumi/"
+	return baseUrl+String(year)+"-"+String(month)+".json"
+}
+exports.random = arandom
+exports.pickone = pickone
