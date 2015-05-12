@@ -4,26 +4,29 @@ a random avatar generator base on node and gm
 ## server mode
 
 run a server of this tool
+
+url中`:config`表示此参数可以省略
+
 ```
-	[command] server
+	node ./src/server.js
 ```
 
 ```
-	http://node-avatar-generator.com/width/str/bgcolor
+	http://localhost:9527/:width/:str/:bgcolor
 ```
 
 ```
- 	http://node-avatar.generator.com/avatar/100/100/name
+	http://localhost:9527/comic/:width
 ```
 
-## cli mode
+## cli mode [todo]
 
 ```javascript
 	[command] one
 ```
 
 
-## usage server mode
+## usage server mode [todo]
 
 ```
 	npm install -g [command]
@@ -35,3 +38,32 @@ run a server of this tool
 ```
 	mocha test
 ```
+
+## log
+
+- 2015年05月12日 增加comic选项
+
+## LICENSE
+
+The MIT License (MIT)
+
+Copyright (c) 2015 Shadow Cun <[vinthony@gmail.com](vinthony@gmail.com)>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
