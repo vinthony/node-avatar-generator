@@ -47,8 +47,7 @@ var arandom = function(a,b){
 exports.comicUrl = function(){
 	year  = arandom(2000,2015)
 	month = pickone([1,4,7,10])
-	baseUrl = "http://www.bilibili.com/index/bangumi/"
-	return baseUrl+String(year)+"-"+String(month)+".json"
+	return "/index/bangumi/"+String(year)+"-"+String(month)+".json"
 }
 exports.random = arandom
 exports.pickone = pickone
