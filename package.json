@@ -1,6 +1,6 @@
 {
   "name": "node-avatar-generator",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "a random avatar generator base on node and node-imagemagick",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,10 @@
     "url": "https://github.com/vinthony/node-avatar-generator/issues"
   },
   "homepage": "https://github.com/vinthony/node-avatar-generator",
+  "dependencies":{
+    "gm": "^1.17.0"
+    },
   "devDependencies": {
-    "cheerio": "^0.17.0",
-    "gm": "^1.17.0",
-    "request": "^2.42.0"
+    "gm": "^1.17.0"
   }
 }

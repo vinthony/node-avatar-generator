@@ -1,6 +1,33 @@
 # node-avatar-generator
 a random avatar generator base on node and gm
 
+
+## getting start
+make sure you have install `imagemagick`
+
+```
+brew install imagemagick
+```
+
+then
+
+```
+npm install node-avatar-generator
+
+```
+the first arguments is config
+`[width,str,bgcolor]`
+or
+`[comic,width]`
+```javascript
+var image = require('node-avatar-generator')
+var fs = require('fs')
+
+//return a buffer
+image(['comic'],function(buffer){
+	fs.writeFile('file.png',buffer)	
+})
+```
 ## server mode
 
 run a server of this tool
