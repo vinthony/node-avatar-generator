@@ -16,14 +16,21 @@
   ],
   "author": "vinthony",
   "license": "MIT",
+  "preferGlobal": "true",
+  "bin": {
+    "server": "./lib/server.js"
+  },
   "bugs": {
     "url": "https://github.com/vinthony/node-avatar-generator/issues"
   },
   "homepage": "https://github.com/vinthony/node-avatar-generator",
-  "dependencies":{
-    "gm": "^1.17.0"
-    },
+  "dependencies": {
+    "commander": "^2.8.1",
+    "gm": "^1.17.0",
+    "gulp": "^3.8.11"
+  },
   "devDependencies": {
-    "gm": "^1.17.0"
+    "gm": "^1.17.0",
+    "mocha": "*"
   }
 }
