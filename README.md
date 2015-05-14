@@ -22,9 +22,14 @@ or
 ```javascript
 var image = require('node-avatar-generator')
 var fs = require('fs')
-
+var option = {
+	type:"comic", //可选值 comic,default
+	width:100, //可选值 integer
+	color:eb002a, //rgb
+	font:kx //kx,lihei,bariol,din
+}
 //return a buffer
-image(['comic'],function(buffer){
+image(option,function(buffer){
 	fs.writeFile('file.png',buffer)	
 })
 ```
@@ -39,7 +44,7 @@ url中`:config`表示此参数可以省略
 ```
 
 ```
-	http://localhost:9527/:width/:str/:bgcolor
+	http://localhost:9527/:width/:str/:bgcolor/:font
 ```
 
 ```
@@ -51,7 +56,6 @@ url中`:config`表示此参数可以省略
 ```javascript
 	[command] one
 ```
-
 
 ## usage server mode [todo]
 

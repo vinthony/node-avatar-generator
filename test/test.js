@@ -1,8 +1,20 @@
 var assert = require('assert')
-var picture = require('../src/picture')
-var colors = require('../src/color')
-var utils = require('../src/utils')
-
+var picture = require('../lib/picture')
+var colors = require('../lib/color')
+var utils = require('../lib/utils')
+var font = require('../lib/font')
+var image = require('../index')
+var fs = require('fs')
+var exec = require('child_process').exec
+base = path.normalize(process.cwd()+path.sep+"fonts"+path.sep)
+describe('RemoveTestData',function(){
+	it('should no  error',function(done){
+		exec('rm *.png',function(err){
+			if(err) console.error(err);
+			done()
+		})
+	})
+})
 describe('Picture',function(){
 	describe('#ascii',function(){
 		it('should save without error',function(done){
@@ -12,8 +24,12 @@ describe('Picture',function(){
 				}
 			char_code = Math.floor(Math.random()*26+65)
 			config.text = String.fromCharCode(char_code)
-			picture(config).one()
-			done()
+			config.font = font.getfromtext(config.text,config.width)
+			picture(config).one(function(buffer){
+				fs.writeFile(config.text+".png",buffer,null,function(){
+					done()
+				})
+			})
 		})
 	})
 	describe('#汉字',function(){
@@ -24,8 +40,12 @@ describe('Picture',function(){
 				}
 			var items = "双马尾怎么绑才显得萌"	
 			config.text = utils.pickone(items)
-			picture(config).one()
-			done()
+			config.font = font.getfromtext(config.text,config.width)
+			picture(config).one(function(buffer){
+				fs.writeFile(config.text+".png",buffer,null,function(){
+					done()
+				})
+			})
 		})
 	})
 })
@@ -53,3 +73,68 @@ describe('Utils',function(){
 		})
 	})
 })
+describe('Image',function(){
+	describe('#main',function(){
+		it('should save without error',function(done){
+			var option = {
+				type:"comic",
+				width:100
+			}
+			image(option,function(buffer){
+				fs.writeFile("x--1.png",buffer,function(err){
+					done()
+				})
+			})
+		})
+		it('[0 config]should save without error',function(done){
+			var option = {
+				type:"comic",
+				width:100
+			}
+			image(null,function(buffer){
+				fs.writeFile("x--2.png",buffer,function(err){
+					done()
+				})
+			})
+		})
+
+	})
+	describe('#main-url',function(){
+		it('[4 option] should save without error',function(done){
+			image("/100/玩/333/kx",function(buffer){
+				fs.writeFile("x-4.png",buffer,function(err){
+					done()
+				})
+			})
+		})
+		it('[3 option] should save without error',function(done){
+			image("/100/str/fca",function(buffer){
+				fs.writeFile("x-3.png",buffer,function(err){
+					done()
+				})
+			})
+		})
+		it('[2 option] should save without error',function(done){
+			image("/100/str",function(buffer){
+				fs.writeFile("x-2.png",buffer,function(err){
+					done()
+				})
+			})
+		})
+		it('[1 option]should save without error',function(done){
+			image("/100",function(buffer){
+				fs.writeFile("x-1.png",buffer,function(err){
+					done()
+				})
+			})
+		})
+	})
+})
+describe('Font',function(){
+		it('should return right font name',function(){
+			assert.equal(font.get("lihei",100).file,base+"LiHei Pro.ttf")
+		})
+		it('should return right font name',function(){
+			assert.equal(font.getfromtext("ffff",100).file,base+"DIN.otf")
+		})
+	})

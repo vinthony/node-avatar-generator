@@ -1,10 +1,5 @@
-//module.exports 
-image = require('./lib/getImage')
-var fs = require('fs')
+module.exports = require('./lib/getImage')
 
-image(['comic'],function(buffer){
-	fs.writeFile('f.png',buffer)
-})
 //enter 
 
 //avatar server
