@@ -131,10 +131,28 @@ describe('Image',function(){
 	})
 })
 describe('Font',function(){
+	describe('init',function(){
 		it('should return right font name',function(){
 			assert.equal(font.get("lihei",100).file,base+"LiHei Pro.ttf")
 		})
 		it('should return right font name',function(){
 			assert.equal(font.getfromtext("ffff",100).file,base+"DIN.otf")
 		})
+	})	
+	describe('usage',function(){
+		it('should save without error',function(done){
+			var config = {
+					width:100,
+					color:colors.RED
+				}
+			for(var x = 65;x<=90;x++){
+				config.text = String.fromCharCode(x)
+				config.font = font.get("din",config.width)
+				picture(config).one(function(buffer){
+					fs.writeFileSync(config.text+".png",buffer)
+				})	
+			}	
+			done()
+		})
 	})
+})
