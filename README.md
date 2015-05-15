@@ -18,16 +18,14 @@ make sure you have install `imagemagick`
 brew install imagemagick
 ```
 
-then
+then in your project
 
 ```
-npm install node-avatar-generator
+npm install node-avatar-generator --save
 
 ```
 the first arguments is config
-`[width,str,bgcolor]`
-or
-`[comic,width]`
+
 ```javascript
 var image = require('node-avatar-generator')
 var fs = require('fs')
