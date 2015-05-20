@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/vinthony/node-avatar-generator",
   "dependencies": {
-    "gm": "^1.17.0",
+    "gm": "^1.17.0"
   },
   "devDependencies": {
     "gm": "^1.17.0",

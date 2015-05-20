@@ -59,19 +59,6 @@ url中`:config`表示此参数可以省略
 	http://localhost:9527/comic/:width
 ```
 
-## cli mode [todo]
-
-```javascript
-	[command] one
-```
-
-## usage server mode [todo]
-
-```
-	npm install -g [command]
-	[command] server
-```
-
 ## test
 
 ```
@@ -104,9 +91,15 @@ url中`:config`表示此参数可以省略
 - 2015年05月15日[1.0.7] 更改随机颜色的颜色值为[日本传统色](http://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E4%BC%A0%E7%BB%9F%E8%89%B2%E7%B3%BB)
 - 2015年05月20日[1.0.8] 去掉全局模式的[todo]，更改入口函数的使用方式
 
-##类似项目
+## 类似项目
 
 [Material-Design-Avatars](https://github.com/lincanbin/Material-Design-Avatars)
+
+## TODOS
+
+- [ ] 除去gm依赖,直接操作imagemagick
+- [ ] 更多type可选
+- [ ] 优化生成效率和生成的位置
 
 ## 致谢
 
