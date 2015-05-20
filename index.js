@@ -1,4 +1,5 @@
-module.exports = require('./lib/getImage')
+exports.image = require('./lib/getImage')
+exports.server = require('./lib/server')
 
 //enter 
 

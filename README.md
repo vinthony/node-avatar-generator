@@ -27,7 +27,7 @@ npm install node-avatar-generator --save
 the first arguments is config
 
 ```javascript
-var image = require('node-avatar-generator')
+var image = require('node-avatar-generator').image
 var fs = require('fs')
 var option = {
 	type:"comic", //可选值 comic,default
@@ -46,8 +46,9 @@ run a server of this tool
 
 url中`:config`表示此参数可以省略
 
-```
-	node ./lib/server.js
+```javascript
+	var image_server = require('node-avatar-generator').server
+	image_server()
 ```
 
 ```
@@ -98,9 +99,10 @@ url中`:config`表示此参数可以省略
 
 ## log
 
-- 2015年05月12日 增加comic选项
-- 2015年05月14日 优化显示的图片位置，优化font类
-- 2015年05月15日 更改随机颜色的颜色值为[日本传统色](http://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E4%BC%A0%E7%BB%9F%E8%89%B2%E7%B3%BB)
+- 2015年05月12日[1.0.5] 增加comic选项
+- 2015年05月14日[1.0.6] 优化显示的图片位置，优化font类
+- 2015年05月15日[1.0.7] 更改随机颜色的颜色值为[日本传统色](http://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E4%BC%A0%E7%BB%9F%E8%89%B2%E7%B3%BB)
+- 2015年05月20日[1.0.8] 去掉全局模式的[todo]，更改入口函数的使用方式
 
 ##类似项目
 
