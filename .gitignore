@@ -31,4 +31,5 @@ node_modules
 *.png
 *.jpeg
 *.jpg
-*.otf
+
+# *.otf
