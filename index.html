@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Node-avatar-generator by vinthony</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Node-avatar-generator</h1>
+        <h2>a random avatar generator base on node and gm</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/vinthony/node-avatar-generator/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/vinthony/node-avatar-generator/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/vinthony/node-avatar-generator" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="node-avatar-generator" class="anchor" href="#node-avatar-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>node-avatar-generator</h1>
+
+<p>a random avatar generator base on node and gm</p>
+
+<p><a href="https://codeclimate.com/repos/5554e6936956800eb5000239/feed"><img src="https://codeclimate.com/repos/5554e6936956800eb5000239/badges/e3327bf288ba42329f3f/gpa.svg" alt="Code Climate"></a></p>
+
+<p><a href="https://nodei.co/npm/node-avatar-generator/"><img src="https://nodei.co/npm/node-avatar-generator.png" alt="NPM"></a></p>
+
+<h2>
+<a id="default-avatar-generator" class="anchor" href="#default-avatar-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>default avatar generator</h2>
+
+<p><img src="http://vinthony.u.qiniudn.com/avatar.png" alt="sss"></p>
+
+<h2>
+<a id="comic-avatar-generator" class="anchor" href="#comic-avatar-generator" aria-hidden="true"><span class="octicon octicon-link"></span></a>comic avatar generator</h2>
+
+<p><img src="http://vinthony.u.qiniudn.com/comic.png" alt="sss"></p>
+
+<h2>
+<a id="getting-start" class="anchor" href="#getting-start" aria-hidden="true"><span class="octicon octicon-link"></span></a>getting start</h2>
+
+<p>make sure you have install <code>imagemagick</code></p>
+
+<pre><code>brew install imagemagick
+</code></pre>
+
+<p>then in your project</p>
+
+<pre><code>npm install node-avatar-generator --save
+
+</code></pre>
+
+<p>the first arguments is config</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-k">var</span> image <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>node-avatar-generator<span class="pl-pds">'</span></span>).image
+<span class="pl-k">var</span> fs <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>fs<span class="pl-pds">'</span></span>)
+<span class="pl-k">var</span> option <span class="pl-k">=</span> {
+    type<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>comic<span class="pl-pds">"</span></span>, <span class="pl-c">//可选值 comic,default</span>
+    width<span class="pl-k">:</span><span class="pl-c1">100</span>, <span class="pl-c">//可选值 integer</span>
+    color<span class="pl-k">:</span>eb002a, <span class="pl-c">//rgb</span>
+    font<span class="pl-k">:</span>kx <span class="pl-c">//kx,lihei,bariol,din</span>
+}
+<span class="pl-c">//return a buffer</span>
+image(option,<span class="pl-k">function</span>(<span class="pl-smi">buffer</span>){
+    fs.writeFile(<span class="pl-s"><span class="pl-pds">'</span>file.png<span class="pl-pds">'</span></span>,buffer) 
+})</pre></div>
+
+<h2>
+<a id="server-mode" class="anchor" href="#server-mode" aria-hidden="true"><span class="octicon octicon-link"></span></a>server mode</h2>
+
+<p>run a server of this tool</p>
+
+<p>url中<code>:config</code>表示此参数可以省略</p>
+
+<div class="highlight highlight-javascript"><pre>    <span class="pl-k">var</span> image_server <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>node-avatar-generator<span class="pl-pds">'</span></span>).server
+    image_server()</pre></div>
+
+<pre><code>    http://localhost:9527/:width/:str/:bgcolor/:font
+</code></pre>
+
+<pre><code>    http://localhost:9527/comic/:width
+</code></pre>
+
+<h2>
+<a id="test" class="anchor" href="#test" aria-hidden="true"><span class="octicon octicon-link"></span></a>test</h2>
+
+<pre><code>    mocha test
+</code></pre>
+
+<h2>
+<a id="字体" class="anchor" href="#%E5%AD%97%E4%BD%93" aria-hidden="true"><span class="octicon octicon-link"></span></a>字体</h2>
+
+<ul>
+<li>
+<p>中文字体可选：</p>
+
+<ul>
+<li>丽黑体</li>
+<li>康熙字典体</li>
+</ul>
+</li>
+<li>
+<p>英文字体可选：</p>
+
+<ul>
+<li>Bariol</li>
+<li>DIN Pro</li>
+</ul>
+</li>
+</ul>
+
+<blockquote>
+<p>如有侵权立删</p>
+</blockquote>
+
+<h2>
+<a id="comic来源" class="anchor" href="#comic%E6%9D%A5%E6%BA%90" aria-hidden="true"><span class="octicon octicon-link"></span></a>comic来源</h2>
+
+<p>所random的所有动漫头像来自于<a href="http://www.bilibili.com/video/bgm_calendar.html">bilibili</a>,如有侵权立删</p>
+
+<h2>
+<a id="log" class="anchor" href="#log" aria-hidden="true"><span class="octicon octicon-link"></span></a>log</h2>
+
+<ul>
+<li>2015年05月12日[1.0.5] 增加comic选项</li>
+<li>2015年05月14日[1.0.6] 优化显示的图片位置，优化font类</li>
+<li>2015年05月15日[1.0.7] 更改随机颜色的颜色值为<a href="http://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%AC%E4%BC%A0%E7%BB%9F%E8%89%B2%E7%B3%BB">日本传统色</a>
+</li>
+<li>2015年05月20日[1.0.8] 去掉全局模式的[todo]，更改入口函数的使用方式</li>
+</ul>
+
+<h2>
+<a id="类似项目" class="anchor" href="#%E7%B1%BB%E4%BC%BC%E9%A1%B9%E7%9B%AE" aria-hidden="true"><span class="octicon octicon-link"></span></a>类似项目</h2>
+
+<p><a href="https://github.com/lincanbin/Material-Design-Avatars">Material-Design-Avatars</a></p>
+
+<h2>
+<a id="todos" class="anchor" href="#todos" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODOS</h2>
+
+<ul>
+<li>[ ] 除去gm依赖,直接操作imagemagick</li>
+<li>[ ] 更多type可选</li>
+<li>[ ] 优化生成效率和生成的位置</li>
+</ul>
+
+<h2>
+<a id="致谢" class="anchor" href="#%E8%87%B4%E8%B0%A2" aria-hidden="true"><span class="octicon octicon-link"></span></a>致谢</h2>
+
+<p>字体排版设计<a href="http://weibo.com/u/1938141191">@虐猫狂魔王这样</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>LICENSE</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Shadow Cun &lt;<a href="vinthony@gmail.com">vinthony@gmail.com</a>&gt;</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
